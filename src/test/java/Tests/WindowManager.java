@@ -1,27 +1,23 @@
 package Tests;
 
+import static org.junit.Assert.assertTrue;
+
+import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import Poms.GooglePage;
 import Poms.PracticePage;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 public class WindowManager {
-	
 	private WebDriver driver;
-    private GooglePage google ;
-    private PracticePage practicePage;
+	private GooglePage google;
+	private PracticePage practicePage;
+
 	@Before
 	public void setup() {
 
@@ -65,12 +61,11 @@ public class WindowManager {
 		driver.get("http://youtube.com");
 		Thread.sleep(5000);
 
-		
 	}
-	
+
 	@After
 	public void teardown() {
-		//driver.quit();
+		driver.quit();
+	}
 
-    }
 }
